@@ -108,8 +108,8 @@
     <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 0;195 -88;195 -88;0 0;0 0;19 -67" begin="1.05s" dur="3.58s" fill="freeze" keyTimes="0; 0.18436; 0.286492; 0.73085; 0.81163; 0.93256; 1"/>
   </g>
   <ellipse style="fill: rgb(29, 148, 216); stroke-width: 6;" cx="1203.66" cy="313.817" rx="42.083" ry="41.495"/>
-  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" x="192.53" y="87.835">PHẠM MINH QUÂN</text>
   <image href="avatar.png" x="9.31" y="5.264" width="99.58" height="112.792" preserveAspectRatio="xMidYMid slice" style="" transform="matrix(1, 0, 0, 0.968421, 7, 6.166234)"/>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" x="192.53" y="87.835">PHẠM MINH QUÂN</text>
   <ellipse style="fill: rgb(255, 255, 255); stroke-width: 1.148;" cx="1059.03" cy="122.617" rx="27.293" ry="35.088"/>
   <g style="" transform="matrix(0.330692, 0, 0, 0.267059, -643.790222, 257.359406)">
     <title>tank</title>
