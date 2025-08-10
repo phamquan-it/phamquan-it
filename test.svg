@@ -12,7 +12,10 @@
   <rect x="184.588" y="79.079" width="254.514" height="32.965" style="stroke: rgb(0, 0, 0); fill: rgb(29, 148, 216); stroke-width: 0px; transform-box: fill-box; transform-origin: 50% 50%;">
     <animateMotion path="M 0 0 L -134.006 2.352 L 294.832 -0.158" calcMode="linear" begin="0.1s" dur="1.98s" fill="freeze" keyTimes="0; 0.5306; 1" keyPoints="0; 0.917967; 1"/>
   </rect>
-  <rect x="331.926" y="417.297" width="161.887" height="70.8" style="stroke: rgb(5, 123, 47); fill: rgb(44, 177, 0);" rx="5.039" ry="5.039"/>
+  <rect x="331.926" y="417.297" width="161.887" height="70.8" style="stroke: rgb(5, 123, 47); fill: rgb(44, 177, 0);" rx="5.039" ry="5.039">
+    <animate attributeName="width" values="161.887;997" begin="5.07s" dur="2s" fill="freeze" keyTimes="0; 1"/>
+    <animate attributeName="x" values="331.926;-1" begin="5.06s" dur="2s" fill="freeze" keyTimes="0; 1"/>
+  </rect>
   <g transform="matrix(1, 0, 0, 1, 236.57782, -27.973255)">
     <title>html</title>
     <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(29, 148, 216); stroke-width: 0;" cx="190.023" cy="305.672" rx="42.083" ry="41.495"/>
