@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Murad Ulti — Emoji Skill (Demo)</title>
+<style>
+  :root{
+    --bg:#041027;
+    --panel:#071635;
+    --accent:#1fb6ff;
+    --glass: rgba(255,255,255,0.03);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(800px 300px at 10% 10%, rgba(31,182,255,0.04), transparent 8%),
+      radial-gradient(800px 300px at 90% 90%, rgba(0,0,0,0.12), transparent 8%),
+      var(--bg);
+    color:#fff;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    padding:24px;
+  }
+
+  .card{
+    width:960px;
+    max-width:96vw;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 20px 60px rgba(2,6,23,0.7);
+  }
+
+  .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .title{font-weight:700;font-size:18px;letter-spacing:0.02em}
+  .subtitle{font-size:13px;color:#9fcdf7}
+
+  .stage{
+    position:relative;
+    height:420px;
+    border-radius:8px;
+    background: linear-gradient(180deg,var(--panel), #031428 140%);
+    border:1px solid rgba(255,255,255,0.03);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* center player */
+  .player{
+    position:relative;
+    z-index:30;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    pointer-events:none;
+  }
+  .avatar{
+    width:96px;height:96px;border-radius:999px;
+    background:linear-gradient(180deg,#0c1b2a,#071022);
+    display:flex;align-items:center;justify-content:center;
+    font-size:46px;box-shadow:0 8px 30px rgba(0,0,0,0.6), inset 0 -8px 20px rgba(255,255,255,0.02);
+    border:2px solid rgba(255,255,255,0.04);
+    transform:translateY(0);
+  }
+  .player .name{font-weight:700;font-size:14px;color:#dff3ff}
+
+  /* skill items (start at center) */
+  .skill-item{
+    --size:84px;
+    position:absolute;
+    left:50%; top:50%;
+    transform: translate(-50%,-50%);
+    width:var(--size); height:var(--size);
+    display:flex; align-items:center; justify-content:flex-start;
+    gap:10px;
+    padding:8px 10px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.03);
+    color:#fff;
+    opacity:0;
+    z-index:20;
+    transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 420ms, filter 420ms;
+    will-change:transform,opacity;
+    backdrop-filter: blur(2px);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    pointer-events:none;
+  }
+  .skill-emoji{
+    width:44px;height:44px;flex:0 0 44px;
+    display:flex;align-items:center;justify-content:center;font-size:20px;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+    transform: translateZ(0);
+  }
+  .skill-label{font-size:13px;font-weight:600;white-space:nowrap}
+
+  /* visible / flown class toggles */
+  .skill-item.fly{ opacity:1; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.6)); }
+  .skill-item.returning{ opacity:0.92; transform: translate(-50%,-50%) scale(1); transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 420ms; }
+
+  /* slash effect */
+  .slash{
+    position:absolute; left:50%; top:40%;
+    width:420px;height:200px; transform:translateX(-50%);
+    z-index:15; opacity:0; pointer-events:none;
+    transition: opacity 260ms ease;
+    filter: blur(0.6px) drop-shadow(0 8px 20px rgba(31,182,255,0.12));
+  }
+
+  /* control row */
+  .controls{display:flex;gap:10px;align-items:center;margin-top:12px}
+  .btn{
+    background:linear-gradient(180deg,#1fb6ff,#0ea5e9);
+    color:#022; font-weight:700; padding:10px 14px; border-radius:8px; border:none; cursor:pointer;
+    box-shadow:0 8px 30px rgba(16,64,96,0.35);
+  }
+  .hint{font-size:13px;color:#9fcdf7}
+
+  /* fake 3D: duplicate shadow layer behind each skill via pseudo-element using text-shadow */
+  .skill-item .skill-emoji{ text-shadow: 0 6px 0 rgba(0,0,0,0.45), 0 12px 0 rgba(0,0,0,0.2); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div>
+        <div class="title">Tiếu Ngạo — Ulti Skill (Emoji)</div>
+        <div class="subtitle">Nhấn "Vung Ulti" — skills sẽ bay ra như Murad</div>
+      </div>
+      <div class="controls">
+        <div class="hint">Cooldown: <span id="cd">0s</span></div>
+        <button id="ultiBtn" class="btn">Vung Ulti</button>
+      </div>
+    </div>
+
+    <div class="stage" id="stage">
+      <!-- slash visual -->
+      <svg class="slash" viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 160 C120 60, 300 40, 410 10" stroke="#9ff" stroke-width="8" stroke-linecap="round" fill="none" stroke-opacity="0.95"/>
+      </svg>
+
+      <!-- player -->
+      <div class="player" aria-hidden="true">
+        <div class="avatar">🥷</div>
+        <div class="name">Murad — Quân</div>
+      </div>
+
+      <!-- skill items: put whatever emoji/label you like -->
+      <div class="skill-item" data-angle="-100" data-dist="180">
+        <div class="skill-emoji">🧩</div>
+        <div class="skill-label">HTML</div>
+      </div>
+
+      <div class="skill-item" data-angle="-45" data-dist="200">
+        <div class="skill-emoji">🎨</div>
+        <div class="skill-label">CSS</div>
+      </div>
+
+      <div class="skill-item" data-angle="-5" data-dist="220">
+        <div class="skill-emoji">⚡</div>
+        <div class="skill-label">JavaScript</div>
+      </div>
+
+      <div class="skill-item" data-angle="50" data-dist="200">
+        <div class="skill-emoji">⚛️</div>
+        <div class="skill-label">React</div>
+      </div>
+
+      <div class="skill-item" data-angle="120" data-dist="180">
+        <div class="skill-emoji">🧭</div>
+        <div class="skill-label">Next.js</div>
+      </div>
+
+      <div class="skill-item" data-angle="170" data-dist="160">
+        <div class="skill-emoji">🎯</div>
+        <div class="skill-label">Tailwind</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const ultiBtn = document.getElementById('ultiBtn');
+  const skills = Array.from(document.querySelectorAll('.skill-item'));
+  const slash = document.querySelector('.slash');
+  const cdEl = document.getElementById('cd');
+
+  let cooling = false;
+
+  // helper to compute translation from angle & distance (in px)
+  function computeTransform(angleDeg, dist){
+    const rad = angleDeg * Math.PI / 180;
+    const dx = Math.cos(rad) * dist;
+    const dy = Math.sin(rad) * dist;
+    return {dx, dy};
+  }
+
+  function doUlti(){
+    if(cooling) return;
+    cooling = true;
+    cdEl.innerText = '...';
+    // sword slash show
+    slash.style.opacity = '1';
+    setTimeout(()=> slash.style.opacity = '0', 220);
+
+    // animate each skill out with stagger
+    skills.forEach((el, i) => {
+      const angle = parseFloat(el.dataset.angle || (i*60 - 120));
+      const dist = parseFloat(el.dataset.dist || 160);
+      const delay = i * 80;
+      setTimeout(() => {
+        const {dx, dy} = computeTransform(angle, dist);
+        // add class to enable opacity
+        el.classList.add('fly');
+        // set transform (translate relative to center)
+        // we use translate(calc(-50% + xpx), calc(-50% + ypx)) so it starts from center
+        el.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(1.03) rotate(${(Math.random()*12-6).toFixed(2)}deg)`;
+      }, delay);
+    });
+
+    // return items after interval
+    setTimeout(() => {
+      skills.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.transform = 'translate(-50%,-50%) scale(0.98)';
+          el.classList.remove('fly');
+          // tiny fade to zero while returning
+          el.style.opacity = '0';
+          // reset after transition
+          setTimeout(()=> {
+            el.style.opacity = '';
+            el.style.transform = 'translate(-50%,-50%)';
+          }, 420);
+        }, i * 60 + 420);
+      });
+
+      // cooldown simulation
+      let t = 2.0;
+      cdEl.innerText = t.toFixed(1) + 's';
+      const iv = setInterval(()=> {
+        t -= 0.1;
+        cdEl.innerText = t > 0 ? t.toFixed(1)+'s' : '0s';
+        if(t <= 0){ clearInterval(iv); cooling = false; cdEl.innerText = '0s'; }
+      }, 100);
+    }, 1400);
+  }
+
+  ultiBtn.addEventListener('click', doUlti);
+
+  // allow spacebar
+  window.addEventListener('keydown', (e) => {
+    if(e.code === 'Space') {
+      e.preventDefault();
+      ultiBtn.classList.add('active');
+      doUlti();
+      setTimeout(()=> ultiBtn.classList.remove('active'), 180);
+    }
+  });
+</script>
+</body>
+</html>
+

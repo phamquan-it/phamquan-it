@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tiếu Ngạo — Vung Kiếm Tung Skill</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --bg:#071026; --panel:#0b1220; --accent:#1fb6ff; --gold:#ffd166;
+  }
+  body{background:linear-gradient(180deg,#031021 0%, #071026 60%); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  .hud { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); box-shadow:0 12px 40px rgba(2,6,23,0.6); border-radius:14px;}
+  .pixel { image-rendering: crisp-edges; shape-rendering: crispEdges; }
+  /* sword swing animation */
+  .sword { transform-origin: 24px 160px; transition: transform 320ms cubic-bezier(.2,.9,.2,1); }
+  .sword.swing { transform: rotate(-55deg) translateX(8px) translateY(-6px) scale(1.02); transition: transform 220ms cubic-bezier(.2,.9,.2,1); }
+  /* skill pop */
+  .skill {
+    transform-origin: center;
+    transition: transform 480ms cubic-bezier(.22,.9,.28,1), opacity 260ms;
+    opacity: 0; transform: translateY(10px) scale(0.85);
+  }
+  .skill.show { opacity: 1; transform: translateY(0) scale(1); }
+  /* flying trail */
+  .trail {
+    position:absolute; pointer-events:none; mix-blend-mode:screen; opacity:0.65;
+    transition: opacity 400ms;
+  }
+  /* small wavy glow */
+  @keyframes wobble {
+    0%{ transform: translateY(0) rotate(0) }
+    50%{ transform: translateY(-4px) rotate(-2deg) }
+    100%{ transform: translateY(0) rotate(0) }
+  }
+  .wob { animation: wobble 2.4s ease-in-out infinite; }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+  <div class="w-full max-w-4xl hud p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Left: banner + sword -->
+    <div class="col-span-1 flex flex-col items-center gap-4">
+      <div class="w-full bg-gradient-to-b from-[#071026] to-[#081426] p-4 rounded-lg border border-white/5">
+        <div class="flex items-center gap-3">
+          <svg width="64" height="64" viewBox="0 0 120 120" class="pixel">
+            <rect width="120" height="120" rx="10" fill="#071026"/>
+            <g transform="translate(12,12)">
+              <rect x="0" y="0" width="96" height="96" rx="8" fill="#0f1724"/>
+              <rect x="22" y="18" width="52" height="52" fill="#e6c9a4"/>
+              <rect x="36" y="34" width="8" height="8" fill="#1b1b1b" id="eyeL"/>
+              <rect x="52" y="34" width="8" height="8" fill="#1b1b1b" id="eyeR"/>
+            </g>
+          </svg>
+          <div>
+            <div class="text-white font-bold text-lg">Tiếu Ngạo</div>
+            <div class="text-amber-200 text-xs">Giang hồ mode • Frontend / Fullstack</div>
+          </div>
+        </div>
+
+        <div class="mt-4 grid grid-cols-2 gap-2">
+          <div class="bg-[#06101a] p-2 rounded flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#9fd9ff" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="text-xs text-[#9fd9ff]">Lv. 99</div>
+          </div>
+          <div class="bg-[#06101a] p-2 rounded flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#ffd166" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="text-xs text-[#ffd166]">Guild: ARCH</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sword area -->
+      <div class="relative w-full h-60 flex items-center justify-center overflow-visible">
+        <!-- trail (for visual) -->
+        <svg class="trail" width="420" height="220" viewBox="0 0 420 220" style="left:-40px; top:-10px;">
+          <path id="trailPath" d="M30 160 C120 110, 220 90, 320 80" stroke="#9fd9ff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.07"/>
+        </svg>
+
+        <!-- the sword (SVG) -->
+        <svg id="sword" class="sword" width="140" height="220" viewBox="0 0 48 160" style="transform: rotate(-8deg);">
+          <!-- handle -->
+          <rect x="18" y="110" width="12" height="36" rx="3" fill="#2b2b2b" stroke="#111" />
+          <rect x="14" y="106" width="20" height="6" rx="2" fill="#ffd166"/>
+          <!-- blade -->
+          <polygon points="24,6 34,106 24,100 14,106" fill="#dbeafe" stroke="#9fbef0" stroke-width="1.2"/>
+          <line x1="24" y1="14" x2="24" y2="96" stroke="#9fbef0" stroke-width="0.8" opacity="0.9"/>
+        </svg>
+
+        <!-- swing button -->
+        <button id="swingBtn" class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-b from-[#1fb6ff] to-[#0ea5e9] text-white px-5 py-2 rounded-md shadow hover:brightness-105">Vung kiếm</button>
+      </div>
+    </div>
+
+    <!-- Middle: skill area -->
+    <div class="col-span-2 bg-[#051021] p-4 rounded-lg">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-lg text-white font-semibold">Kỹ năng tung chiêu</div>
+          <div class="text-sm text-slate-300">Ấn <span class="font-medium text-amber-300">Vung kiếm</span> để phóng loạt skill</div>
+        </div>
+        <div class="text-xs text-slate-500">Cooldown: <span id="cool" class="font-mono">0s</span></div>
+      </div>
+
+      <div id="skillsWrap" class="mt-6 relative h-60 border border-white/5 rounded-lg p-4 overflow-hidden">
+        <!-- center origin -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+          <div class="w-14 h-14 bg-[#0f1724] border border-white/5 rounded-full flex items-center justify-center text-xs text-slate-200">YOU</div>
+        </div>
+
+        <!-- skill items (initial hidden) -->
+        <!-- each skill has data-angle (deg) and data-dist (px) to fly out -->
+        <div class="skill-item absolute skill" data-angle="-100" data-dist="160" style="left:50%; top:50%; transform: translate(-50%,-50%);">
+          <div class="skill bg-[#061426] border border-white/6 p-2 rounded-lg flex items-center gap-3 shadow">
+            <!-- simple svg icons -->
+            <svg width="44" height="44" viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#ff6b6b"/><text x="24" y="31" font-size="16" fill="#fff" text-anchor="middle" font-family="monospace">HTML</text></svg>
+            <div class="text-sm text-white">HTML</div>
+          </div>
+        </div>
+
+        <div class="skill-item absolute skill" data-angle="-30" data-dist="170" style="left:50%; top:50%; transform: translate(-50%,-50%);">
+          <div class="skill bg-[#061426] border border-white/6 p-2 rounded-lg flex items-center gap-3 shadow">
+            <svg width="44" height="44" viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#60a5fa"/><text x="24" y="31" font-size="14" fill="#fff" text-anchor="middle" font-family="monospace">CSS</text></svg>
+            <div class="text-sm text-white">CSS</div>
+          </div>
+        </div>
+
+        <div class="skill-item absolute skill" data-angle="20" data-dist="180" style="left:50%; top:50%; transform: translate(-50%,-50%);">
+          <div class="skill bg-[#061426] border border-white/6 p-2 rounded-lg flex items-center gap-3 shadow">
+            <svg width="44" height="44" viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#f59e0b"/><text x="24" y="31" font-size="12" fill="#fff" text-anchor="middle" font-family="monospace">JS</text></svg>
+            <div class="text-sm text-white">JavaScript</div>
+          </div>
+        </div>
+
+        <div class="skill-item absolute skill" data-angle="80" data-dist="170" style="left:50%; top:50%; transform: translate(-50%,-50%);">
+          <div class="skill bg-[#061426] border border-white/6 p-2 rounded-lg flex items-center gap-3 shadow">
+            <svg width="44" height="44" viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#00d8a8"/><text x="24" y="31" font-size="12" fill="#fff" text-anchor="middle" font-family="monospace">NEXT</text></svg>
+            <div class="text-sm text-white">Next.js</div>
+          </div>
+        </div>
+
+        <div class="skill-item absolute skill" data-angle="130" data-dist="160" style="left:50%; top:50%; transform: translate(-50%,-50%);">
+          <div class="skill bg-[#061426] border border-white/6 p-2 rounded-lg flex items-center gap-3 shadow">
+            <svg width="44" height="44" viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#7c3aed"/><text x="24" y="31" font-size="12" fill="#fff" text-anchor="middle" font-family="monospace">REACT</text></svg>
+            <div class="text-sm text-white">React</div>
+          </div>
+        </div>
+
+        <!-- a floating sword slash sprite for effect -->
+        <svg id="slash" class="absolute w-44 h-44 opacity-0" viewBox="0 0 160 160" style="left:50%; top:24%;">
+          <g fill="none" stroke="#9ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+            <path d="M10 120 C60 40, 100 20, 150 10" stroke-linecap="round" stroke-width="6"/>
+          </g>
+        </svg>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+  // helpers
+  const swingBtn = document.getElementById('swingBtn');
+  const sword = document.getElementById('sword');
+  const skills = Array.from(document.querySelectorAll('.skill-item'));
+  const slash = document.getElementById('slash');
+  const coolEl = document.getElementById('cool');
+
+  let cooling = false;
+
+  function flyOut(el, angleDeg, dist, delay){
+    // compute target coords relative to center
+    const rad = angleDeg * Math.PI / 180;
+    const dx = Math.cos(rad) * dist;
+    const dy = Math.sin(rad) * dist;
+    // apply transform after small delay
+    setTimeout(()=> {
+      const inner = el.querySelector('.skill');
+      el.style.transition = 'transform 520ms cubic-bezier(.2,.9,.2,1), opacity 320ms';
+      // move element by translate; it's positioned at center
+      el.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
+      inner.classList.add('show');
+      // subtle rotate
+      inner.style.transformOrigin = 'center';
+      inner.style.transform += ' rotate(0deg)';
+    }, delay);
+  }
+
+  function flyBack(el, delay){
+    setTimeout(()=>{
+      const inner = el.querySelector('.skill');
+      el.style.transform = `translate(-50%,-50%)`;
+      inner.classList.remove('show');
+    }, delay);
+  }
+
+  function doSlashEffect(){
+    // show slash briefly
+    slash.style.opacity = '1';
+    slash.style.transform = 'translateX(-50%) scale(1.05)';
+    slash.style.left = '50%';
+    setTimeout(()=> {
+      slash.style.opacity = '0';
+    }, 220);
+  }
+
+  swingBtn.addEventListener('click', ()=>{
+    if(cooling) return;
+    cooling = true;
+    coolEl.innerText = '...';
+    // swing sword
+    sword.classList.add('swing');
+    doSlashEffect();
+
+    // pop skills
+    skills.forEach((s, i) => {
+      const angle = parseFloat(s.dataset.angle || (i*60 - 120));
+      const dist = parseFloat(s.dataset.dist || 160);
+      flyOut(s, angle, dist, 60 * i);
+    });
+
+    // sound/visual timing
+    setTimeout(()=> sword.classList.remove('swing'), 280);
+    // bring back after 1.8s
+    setTimeout(()=>{
+      skills.forEach((s,i)=> flyBack(s, i*60));
+      // simple cooldown 2s
+      let t = 2.0;
+      const iv = setInterval(()=>{
+        t -= 0.25;
+        coolEl.innerText = t > 0 ? t.toFixed(2)+'s' : '0s';
+        if(t <= 0){ clearInterval(iv); cooling=false; coolEl.innerText='0s'; }
+      }, 250);
+    }, 1400);
+  });
+
+  // allow keyboard space to trigger
+  window.addEventListener('keydown', (e)=> {
+    if(e.code === 'Space') {
+      swingBtn.classList.add('active');
+      swingBtn.click();
+      setTimeout(()=> swingBtn.classList.remove('active'), 180);
+    }
+  });
+</script>
+</body>
+</html>
+
