@@ -160,7 +160,23 @@
   <rect x="0.179" y="436.961" width="994.522" height="61.754" style="stroke: rgb(0, 0, 0); fill: rgb(174, 108, 34); stroke-width: 0px;"/>
   <path style="stroke: rgb(0, 0, 0); fill: rgb(85, 128, 76); stroke-width: 0px;" d="M -152.44 417.033 L -148.95 415.563 L -147.3 411.891 C -147.137 408.151 -131.857 409.196 -140.32 413.176 C -148.783 417.156 -149.13 419.053 -151.16 418.134 C -153.18 417.215 -152.62 416.849 -152.44 417.033 Z"/>
   <path style="stroke: rgb(0, 0, 0); fill: rgb(85, 128, 76); stroke-width: 0;" d="M -149.71 407.293 L -146.22 405.823 L -144.57 402.151 C -144.4 398.411 -129.12 399.456 -137.59 403.436 C -146.05 407.416 -146.4 409.313 -148.43 408.394 C -150.45 407.475 -149.89 407.109 -149.71 407.293 Z"/>
-  <ellipse style="stroke-width: 9px; stroke: rgb(254, 0, 0); fill: rgba(216, 216, 216, 0);" cx="-72.292" cy="202.75" rx="48.299" ry="45.839">
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="158 0;0 0;283 -1;0 0;414 0;0 0;523 0;0 0;639 0;0 0;744 -5;0 0;841 0;0 0" begin="11s" dur="5.04s" fill="freeze" keyTimes="0; 0.08094; 0.12358; 0.17043; 0.230362; 0.31394; 0.343368; 0.39606; 0.466682; 0.515741; 0.56773; 0.6422; 0.68584; 1" repeatCount="indefinite"/>
+  <ellipse style="stroke-width: 9px; stroke: rgb(254, 0, 0); fill: rgba(216, 216, 216, 0);" cx="-72.289" cy="202.75" rx="48.299" ry="45.839">
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="158 0;0 0;283 -1;0 0;414 0;0 0;523 0;0 0;639 0;0 0;744 -5;0 0;841 0;0 0" begin="11s" dur="4.23s" fill="freeze" keyTimes="0; 0.01149; 0.13324; 0.14333; 0.26397; 0.28954; 0.47473; 0.51831; 0.57656; 0.63482; 0.70194; 0.75996; 0.824; 1" repeatCount="indefinite"/>
   </ellipse>
+  <g transform="matrix(1, 0, 0, 1, 140.409866, -15.118443)" style="transform-origin: -275.367px 97.158px;">
+    <path style="stroke: rgb(0, 0, 0); fill: rgb(73, 73, 73); stroke-width: 0px;" d="M -263.24 117.222 C -263.44 117.222 -264.08 121.636 -263.96 121.636 C -264.49 122.714 -263.1 123.748 -262.78 123.107 C -262.78 123.107 -260.69 120.432 -261.41 118.292 C -262.13 116.152 -263.1 117.07 -263.24 117.222 Z"/>
+    <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(66, 66, 66);" cx="-291.22" cy="114.874" rx="28.851" ry="17.835"/>
+    <path style="stroke: rgb(0, 0, 0); fill: rgb(73, 73, 73); stroke-width: 0; transform-box: fill-box; transform-origin: 50% 50%;" d="M -253.66 123.04 C -253.87 123.04 -254.51 118.626 -254.38 118.626 C -254.91 117.548 -253.53 116.514 -253.2 117.155 C -253.2 117.155 -251.12 119.83 -251.84 121.97 C -252.56 124.11 -253.53 123.192 -253.66 123.04 Z" transform="matrix(-1, 0, 0, -1, 0.000017, -0.000013)"/>
+    <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(66, 66, 66); stroke-width: 1;" cx="-224.56" cy="114.651" rx="28.851" ry="17.835"/>
+    <path style="stroke: rgb(0, 0, 0); fill: none;" d="M -262.125 115.492 C -261.93 118.698 -253.428 118.421 -253.623 115.208"/>
+    <path style="stroke: rgb(0, 0, 0); fill: rgba(216, 216, 216, 0);" d="M -194.88 113.182 L -230.63 72.411 L -250.89 62.697">
+      <animate attributeName="opacity" values="1;0" begin="6.9s" dur="0.5s" fill="freeze" keyTimes="0; 1"/>
+    </path>
+    <path style="stroke: rgb(0, 0, 0); stroke-width: 1; fill: rgba(216, 216, 216, 0); transform-box: fill-box; transform-origin: 50% 50%;" d="M -321.34 126.213 L -340.65 75.508 L -351.57 63.427" transform="matrix(0.989969, -0.141282, 0.141282, 0.989969, 3.485539, -1.130071)">
+      <animate attributeName="opacity" values="1;0" begin="7s" dur="0.5s" fill="freeze" keyTimes="0; 1"/>
+    </path>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;234 -18" begin="5.33s" dur="0.68s" fill="freeze" keyTimes="0; 1"/>
+    <animateTransform type="scale" additive="sum" attributeName="transform" values="1 1;0.36 0.33" begin="6.19s" dur="0.53s" fill="freeze" keyTimes="0; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 5;0 0" begin="8.67s" dur="3.41s" fill="freeze" keyTimes="0; 0.605331; 1" repeatCount="indefinite"/>
+  </g>
 </svg>
