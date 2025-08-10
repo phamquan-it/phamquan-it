@@ -12,7 +12,7 @@
   <rect x="486.574" y="60.873" width="322.832" height="32.965" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(75, 165, 216); transform-box: fill-box; transform-origin: 50% 50%;">
     <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;274 0" begin="0s" dur="1.43s" fill="freeze" keyTimes="0; 1"/>
   </rect>
-  <rect x="326.926" y="417.297" width="161.887" height="70.8" style="stroke: rgb(5, 123, 47); fill: rgb(44, 177, 0);" rx="5.039" ry="5.039">
+  <rect x="326.926" y="417.297" width="161.887" height="70.8" style="stroke: rgb(5, 123, 47); fill: rgb(42, 177, 147);" rx="5.039" ry="5.039">
     <animate attributeName="width" values="161.887;997" begin="4.73s" dur="0.51s" fill="freeze" keyTimes="0; 1"/>
     <animate attributeName="x" values="331.926;-1" begin="4.69s" dur="0.53s" fill="freeze" keyTimes="0; 1"/>
   </rect>
@@ -119,7 +119,7 @@
     <path style="stroke: rgb(0, 0, 0); transform-origin: 1701.85px 496.809px; fill: rgb(4, 123, 0);" d="M 1691.43 419.689 C 1691.43 419.689 1719.52 407.001 1729.94 421.358 C 1740.37 435.716 1774.44 441.124 1774.44 441.124 C 1774.44 441.124 1806.32 498.728 1774.15 491.831 C 1741.98 484.933 1609.02 506.183 1634.09 478.002 C 1659.15 449.822 1689.87 417.979 1691.43 419.689 Z"/>
     <path style="stroke: rgb(3, 143, 46); transform-origin: 1701.85px 496.809px; fill: rgb(5, 161, 0);" d="M 1803.06 375.608 L 1807.34 395.13 L 1823.8 389.492 L 1819.53 370.434 L 1803.06 375.608 Z"/>
     <path style="stroke: rgb(0, 0, 0); fill: rgb(4, 139, 0);" d="M 1573.682 494.333 L 1578.321 472.507 L 1593.164 465.041 L 1609.578 459.905 L 1619.603 467.913 L 1636.765 477.102 L 1633.054 492.611 L 1573.682 494.333 Z"/>
-    <path style="stroke: rgb(3, 143, 46); transform-origin: 1701.85px 496.809px; fill: rgb(4, 138, 0);" d="M 1538.73 491.225 L 1868.55 480.274 C 1868.55 480.274 1942.05 614.39 1889.37 612.699 C 1836.7 611.006 1477.49 631.943 1487.07 602.113 C 1496.69 572.285 1492.7 500.107 1538.73 491.225 Z"/>
+    <path style="stroke: rgb(3, 143, 46); transform-origin: 1701.85px 496.809px; fill: rgb(50, 138, 0);" d="M 1538.73 491.225 L 1868.55 480.274 C 1868.55 480.274 1942.05 614.39 1889.37 612.699 C 1836.7 611.006 1477.49 631.943 1487.07 602.113 C 1496.69 572.285 1492.7 500.107 1538.73 491.225 Z"/>
     <rect x="-570.75" y="417.698" width="351.506" height="65.799" style="stroke: rgb(0, 0, 0); fill: rgb(96, 96, 96); transform-origin: -398.751px 359.271px;" transform="matrix(0.999966, 0.008195, -0.009463, 0.999956, 2100.598629, 148.770814)" rx="47.306" ry="47.306"/>
     <g style="transform-origin: -65.303px 329.934px;" transform="matrix(0.640143, -0.157781, 0.147806, 0.919486, 1673.820068, 109.474838)">
       <ellipse style="stroke: rgb(20, 20, 20); transform-box: fill-box; transform-origin: 50% 50%; fill: rgb(4, 139, 0);" cx="-78.765" cy="321.188" rx="26.474" ry="20.203" transform="matrix(0.9943, -0.10662, 0.108873, 0.994058, 9.654013, 6.479121)"/>
