@@ -5,12 +5,12 @@
     <title>js</title>
     <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(29, 148, 216); stroke-width: 0px;" cx="260.449" cy="190.676" rx="42.083" ry="41.495"/>
     <rect x="244.33" y="174.529" width="34.771" height="31.943" style="fill: rgb(255, 227, 0); stroke: rgba(255, 255, 255, 0); stroke-width: 0.62;"/>
-    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="39.608" y="72.319" transform="matrix(0.616092, 0, 0, 0.624554, 227.427994, 152.009949)">JS</text>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" transform="matrix(0.616092, 0, 0, 0.624554, 227.427994, 152.009949)" x="39.608" y="72.319">JS</text>
     <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;173 0;173 0;0 0;126 -69" begin="2.08s" dur="2.66s" fill="freeze" keyTimes="0; 0.13104; 0.67825; 0.94033; 1"/>
   </g>
-  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" x="493.069" y="71.387">Fullstack Developer</text>
-  <rect x="184.588" y="79.079" width="254.514" height="32.965" style="stroke: rgb(0, 0, 0); fill: rgb(29, 148, 216); stroke-width: 0px; transform-box: fill-box; transform-origin: 50% 50%;">
-    <animateMotion path="M 0 0 L -134.006 2.352 L 294.832 -0.158" calcMode="linear" begin="0.1s" dur="1.98s" fill="freeze" keyTimes="0; 0.5306; 1" keyPoints="0; 0.917967; 1"/>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" x="493.069" y="86.387">Fullstack Developer</text>
+  <rect x="486.574" y="60.873" width="322.832" height="32.965" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(75, 165, 216); transform-box: fill-box; transform-origin: 50% 50%;">
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;274 0" begin="0s" dur="1.43s" fill="freeze" keyTimes="0; 1"/>
   </rect>
   <rect x="326.926" y="417.297" width="161.887" height="70.8" style="stroke: rgb(5, 123, 47); fill: rgb(44, 177, 0);" rx="5.039" ry="5.039">
     <animate attributeName="width" values="161.887;997" begin="4.73s" dur="0.51s" fill="freeze" keyTimes="0; 1"/>
@@ -109,6 +109,6 @@
   </g>
   <ellipse style="fill: rgb(29, 148, 216); stroke-width: 6;" cx="1203.66" cy="313.817" rx="42.083" ry="41.495"/>
   <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" x="192.53" y="87.835">PHẠM MINH QUÂN</text>
-  <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(216, 216, 216);" cx="59.1" cy="52.16" rx="49.79" ry="46.896"/>
+  <image href="avatar.png" x="9.31" y="5.264" width="99.58" height="112.792" preserveAspectRatio="xMidYMid slice" style="" transform="matrix(1, 0, 0, 0.968421, 0, 0.166234)"/>
   <ellipse style="fill: rgb(255, 255, 255); stroke-width: 1.148;" cx="1059.03" cy="122.617" rx="27.293" ry="35.088"/>
 </svg>
