@@ -1,4 +1,4 @@
 # Simple Animated SVG
 
-<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMDAnIGhlaWdodD0nMjAwJz48Y2lyY2xlIGN4PSc1MCcgY3k9JzEwMCcgcj0nMzAnIGZpbGw9J3JlZCc+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0nY3gnIHZhbHVlcz0nNTs xNT A7NTAnIGR1cj0nMnMnIHJlcGVhdENvdW50PSdpbmRlZmluaXRlJy8+PC9jaXJjbGU+PC9zdmc+" />
+<img src="/test.svg" />
 
