@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
   <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="180.531" cy="191.064" rx="66.578" ry="82.011">
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;118 0;0 0" begin="click" dur="2s" fill="freeze" keyTimes="0; 0.5; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;118 0;0 0" dur="2s" fill="freeze" keyTimes="0; 0.5; 1" repeatCount="indefinite"/>
   </ellipse>
 </svg>
