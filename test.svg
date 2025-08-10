@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" xmlns:bx="https://boxy-svg.com">
-  <rect x="1.528" y="-0.787" width="997.598" height="498.81" style="stroke: rgb(0, 0, 0); fill: rgb(75, 165, 216); stroke-width: 0px;"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" xmlns:bx="https://boxy-svg.com">
+  <rect x="1.528" y="-0.787" width="997.598" height="485.955" style="stroke: rgb(0, 0, 0); fill: rgb(75, 165, 216); stroke-width: 0px;"/>
   <g transform="matrix(1, 0, 0, 1, 179.228012, 77.922684)" style="">
     <title>js</title>
     <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(29, 148, 216); stroke-width: 0px;" cx="260.449" cy="190.676" rx="42.083" ry="41.495"/>
     <rect x="244.33" y="174.529" width="34.771" height="31.943" style="fill: rgb(255, 227, 0); stroke: rgba(255, 255, 255, 0); stroke-width: 0.62;"/>
     <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="39.608" y="72.319" transform="matrix(0.616092, 0, 0, 0.624554, 227.427994, 152.009949)">JS</text>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;173 0;173 0;0 0;126 -69" begin="2.08s" dur="5.95s" fill="freeze" keyTimes="0; 0.13104; 0.3218; 0.94033; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;173 0;173 0;0 0;126 -69" begin="2.08s" dur="2.66s" fill="freeze" keyTimes="0; 0.13104; 0.67825; 0.94033; 1"/>
   </g>
   <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" x="493.069" y="71.387">Fullstack Developer</text>
   <rect x="184.588" y="79.079" width="254.514" height="32.965" style="stroke: rgb(0, 0, 0); fill: rgb(29, 148, 216); stroke-width: 0px; transform-box: fill-box; transform-origin: 50% 50%;">
     <animateMotion path="M 0 0 L -134.006 2.352 L 294.832 -0.158" calcMode="linear" begin="0.1s" dur="1.98s" fill="freeze" keyTimes="0; 0.5306; 1" keyPoints="0; 0.917967; 1"/>
   </rect>
-  <rect x="332.926" y="429.297" width="161.887" height="70.8" style="stroke: rgb(5, 123, 47); fill: rgb(44, 177, 0);" rx="5.039" ry="5.039"/>
+  <rect x="331.926" y="417.297" width="161.887" height="70.8" style="stroke: rgb(5, 123, 47); fill: rgb(44, 177, 0);" rx="5.039" ry="5.039"/>
   <g transform="matrix(1, 0, 0, 1, 236.57782, -27.973255)">
     <title>html</title>
     <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(29, 148, 216); stroke-width: 0;" cx="190.023" cy="305.672" rx="42.083" ry="41.495"/>
@@ -23,7 +23,7 @@
       <path style="stroke: rgb(236, 102, 48); fill: none;" d="M 282.135 266.769 L 272.821 275.893 L 282.4 285.265"/>
       <path style="stroke: rgb(236, 102, 48); fill: none; stroke-width: 1; transform-box: fill-box; transform-origin: 50% 50%;" d="M 301.216 285.658 L 291.902 276.534 L 301.481 267.162" transform="matrix(-1, 0, 0, -1, 0.000047, 0.000029)"/>
     </g>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;206 125;206 125;136 -77;0 0;0 0;242 -81" begin="1.79s" dur="7.23s" fill="freeze" keyTimes="0; 0.10642; 0.15717; 0.21047; 0.31094; 0.93738; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;206 125;206 125;136 -77;0 0;0 0;242 -81" begin="1.79s" dur="3.1s" fill="freeze" keyTimes="0; 0.15899; 0.57772; 0.64535; 0.82229; 0.93738; 1"/>
   </g>
   <g transform="matrix(1.250488, 0, 0, 1.260809, 278.847137, 6.237789)" style="">
     <title>css</title>
@@ -32,7 +32,7 @@
       <path style="stroke: rgb(255, 255, 255); stroke-width: 6px; fill: none;" d="M 44.742 276.813 L 74.803 277.809 L 72.925 309.701 L 61.651 314.684 L 48.5 307.707 L 48.5 301.728"/>
       <path style="fill: rgb(216, 216, 216); stroke: rgb(255, 255, 255); stroke-width: 5px;" d="M 46.097 290.688 L 76.658 291.619"/>
     </g>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 113;0 113;0 0;0 0;-272 -54" begin="1.95s" dur="2.18s" fill="freeze" keyTimes="0; 0.23028; 0.32795; 0.59059; 0.93869; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 113;0 113;0 0;0 0;-272 -54" begin="1.95s" dur="2.18s" fill="freeze" keyTimes="0; 0.23028; 0.74929; 0.86922; 0.93869; 1"/>
   </g>
   <g transform="matrix(1, 0, 0, 1, -233.45256, 350.675385)" style="">
     <title>linux</title>
@@ -71,7 +71,7 @@
       </g>
       <path style="stroke: rgb(0, 0, 0);" d="M 1074.961 232.63 C 1074.961 232.63 1067.637 243.955 1077.469 236.563"/>
     </g>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 0;328 -60" begin="2.01s" dur="7.65s" fill="freeze" keyTimes="0; 0.937049; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 0;328 -60" begin="2.01s" dur="3.22s" fill="freeze" keyTimes="0; 0.937049; 1"/>
   </g>
   <g transform="matrix(1.394242, 0, 0, 1.325662, 156.046082, -299.841949)" style="">
     <title>laravel</title>
@@ -87,7 +87,7 @@
       <path style="stroke: rgb(255, 0, 0); fill: rgb(255, 255, 255);" d="M 507.924 249.087 L 523.962 235.417 L 548.005 241.745 L 529.001 256.088 L 507.924 249.087 Z"/>
       <path style="stroke: rgb(255, 0, 0); fill: rgb(255, 255, 255);" d="M 528.442 256.265 L 529.23 283.426"/>
     </g>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;-128 0;-128 0;0 0;-159 -62" begin="1.96s" dur="2.33s" fill="freeze" keyTimes="0; 0.24749; 0.58506; 0.95193; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;-128 0;-128 0;0 0;-159 -62" begin="1.96s" dur="2.33s" fill="freeze" keyTimes="0; 0.24749; 0.6868; 0.95193; 1"/>
   </g>
   <g transform="matrix(1.118464, 0, 0, 1.156085, 75.985596, -226.305389)" style="">
     <title>nextjs</title>
@@ -95,14 +95,14 @@
     <path d="M 313.81 414.228 Q 315.726 411.232 317.642 414.228 L 329.779 433.206 Q 331.695 436.202 327.862 436.202 L 303.59 436.202 Q 299.757 436.202 301.673 433.206 Z" bx:shape="triangle 299.757 411.232 31.938 24.97 0.5 0.12 1@51851934" style="stroke: rgb(0, 0, 0);"/>
     <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" transform="matrix(0.519616, 0, 0, 0.386667, 136.221313, 277.190582)" y="446.082" x="298.139">NEXT.<tspan x="298.1390075683594" dy="1em">​</tspan></text>
     <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" transform="matrix(0.191943, 0, 0, 0.189078, 310.962219, 379.989136)" x="109.326" y="368.605">JS</text>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;-84 -96;0 0;0 0;-78 -62" begin="1.93s" dur="4.12s" fill="freeze" keyTimes="0; 0.24854; 0.51582; 0.88923; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;-84 -96;-84 -96;0 0;0 0;-78 -62" begin="1.93s" dur="2.39s" fill="freeze" keyTimes="0; 0.22216; 0.70104; 0.78236; 0.88923; 1"/>
   </g>
   <g transform="matrix(1.072061, 0, 0, 1.11925, 0.240729, -72.234901)" style="">
     <title>mysql</title>
     <ellipse style="fill: rgb(29, 148, 216); stroke-width: 6;" cx="405.181" cy="312.27" rx="42.083" ry="41.495"/>
     <path style="stroke: rgb(255, 255, 255); fill: rgba(216, 216, 216, 0);" d="M 388.832 293.767 L 399.589 300.937 C 399.589 300.937 421.103 287.941 429.619 322.447 C 435.094 344.636 425.478 338.068 417.915 330.552 C 413.717 326.38 410.15 321.915 410.15 321.915 L 404.788 330.896 C 400.907 335.053 403.333 316.981 403.984 316.284 C 403.984 316.284 379.136 291.888 388.832 293.767 Z"/>
     <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(255, 255, 255);" cx="408.432" cy="306.561" rx="0.37" ry="0.375"/>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 0;195 -88;0 0;0 0;19 -67" begin="1.05s" dur="5.85s" fill="freeze" keyTimes="0; 0.18436; 0.38739; 0.51368; 0.93256; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 0;195 -88;195 -88;0 0;0 0;19 -67" begin="1.05s" dur="3.58s" fill="freeze" keyTimes="0; 0.18436; 0.286492; 0.73085; 0.81163; 0.93256; 1"/>
   </g>
   <ellipse style="fill: rgb(29, 148, 216); stroke-width: 6;" cx="1203.66" cy="313.817" rx="42.083" ry="41.495"/>
   <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" x="192.53" y="87.835">PHẠM MINH QUÂN</text>
