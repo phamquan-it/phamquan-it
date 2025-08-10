@@ -32,7 +32,7 @@
       <path style="stroke: rgb(255, 255, 255); stroke-width: 6px; fill: none;" d="M 44.742 276.813 L 74.803 277.809 L 72.925 309.701 L 61.651 314.684 L 48.5 307.707 L 48.5 301.728"/>
       <path style="fill: rgb(216, 216, 216); stroke: rgb(255, 255, 255); stroke-width: 5px;" d="M 46.097 290.688 L 76.658 291.619"/>
     </g>
-    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 113;0 113;0 0;0 0;-272 -54" begin="1.95s" dur="4.6s" fill="freeze" keyTimes="0; 0.23028; 0.32795; 0.59059; 0.90355; 1"/>
+    <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;0 113;0 113;0 0;0 0;-272 -54" begin="1.95s" dur="1.34s" fill="freeze" keyTimes="0; 0.23028; 0.32795; 0.59059; 0.90355; 1"/>
   </g>
   <g transform="matrix(1, 0, 0, 1, -233.45256, 350.675385)" style="visibility: hidden;">
     <title>linux</title>
